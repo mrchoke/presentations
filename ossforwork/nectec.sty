@@ -1,0 +1,76 @@
+\ProvidesPackage{nectec}[2021/04/06 v1.0 NECTEC Beamer  for XeLaTeX]
+\RequirePackage{xkeyval}
+\RequirePackage{tlwg-fonts}
+\RequirePackage{polyglossia}
+\RequirePackage{hanging}
+\RequirePackage{multicol}
+\RequirePackage{fancybox}
+\RequirePackage{booktabs}
+\RequirePackage{caption}
+\RequirePackage{tabularx}
+
+\newif\ifnectec@english
+\newcommand{\nectec@numerals}{thai}
+\newif\ifnectec@notsetfont\nectec@notsetfonttrue
+
+\newcommand{\thaidefaultfont}{Laksaman}
+\newcommand{\englishdefaultfont}{lms}
+
+\newcommand{\coverbg}{\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{bg/BG-Presentation-NECTEC-cover.png}}}
+
+\DeclareOptionX{english}{\nectec@englishtrue}
+\DeclareOptionX{thai}{\nectec@englishfalse}
+\DeclareOptionX{arabic}{\renewcommand{\nectec@numerals}{arabic}}
+
+\DeclareOptionX{font}[Laksaman]{%
+  \newfontfamily\englishfont{#1}%
+  \newfontfamily\englishfontsf{#1}%
+  \newfontfamily\englishfonttt{#1}%
+  \newfontfamily\thaifont{#1}%
+  \newfontfamily\thaifontsf{#1}%
+  \newfontfamily\thaifonttt{#1}%
+  \nectec@notsetfontfalse%
+  }
+
+\ProcessOptionsX\relax
+
+\ifnectec@notsetfont
+\newfontfamily\englishfont{Laksaman}%
+  \newfontfamily\englishfontsf{Laksaman}%
+  \newfontfamily\englishfonttt{Laksaman}%
+  \newfontfamily\thaifont{Laksaman}%
+  \newfontfamily\thaifontsf{Laksaman}%
+  \newfontfamily\thaifonttt{Laksaman}%
+\fi
+
+
+\ifnectec@english
+  \setdefaultlanguage{english}
+  \setotherlanguages{thai}
+  \XeTeXlinebreaklocale "us"
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{bg/BG-Presentation-NECTEC-en.png}}
+  \renewcommand{\coverbg}{\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{bg/BG-Presentation-NECTEC-en-cover.png}}}
+\else
+  \setdefaultlanguage[numerals=\nectec@numerals]{thai}
+  \setotherlanguages{english}
+  \XeTeXlinebreaklocale "th"
+  \XeTeXlinebreakskip = 0pt plus 1pt \relax
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{bg/BG-Presentation-NECTEC-inside.png}}
+\fi
+
+
+\newcommand{\printdate}[3]{
+  \begingroup
+  \year=#1\relax
+  \month=#2\relax
+  \day=#3\relax
+  \today
+  \endgroup
+}
+
+\usetheme{Nectec}
+\setbeamercovered{transparent}
+\setbeamertemplate{enumerate items}[circle]
+%  \setbeamertemplate{enumerate items}{\scalebox{4}{\text{\textbullet\insertenumlabel}}}
+
+% \setbeamertemplate{footnote}{\hangpara{2em}{1}\makebox[2em][l]{\insertfootnotemark}\footnotesize\insertfootnotetext\par}

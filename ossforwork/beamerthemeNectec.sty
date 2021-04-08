@@ -1,0 +1,86 @@
+\ProvidesPackage{beamerthemeNectec}[2021/04/06  v1.0 beamerthemeNectec]
+
+% Original theme
+% Bilkent University Beamer Template --- by Alican Büyükçakır
+%
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+% Modify for NECTEC Beamer Theme
+
+\setlength{\unitlength}{1cm}
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\usetheme{Boadilla}
+\useoutertheme[]{miniframes}
+\useinnertheme{rectangles}
+\usecolortheme{Nectec}
+
+\let\Tiny=\tiny
+
+\setbeamertemplate{blocks}[rounded]
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamertemplate{frametitle}
+ 	{ 
+  \begin{minipage}[c]{\columnwidth}
+    \begin{picture}(12.8,0.7651)(0,0)
+      \put(-0.2,1.4){           \begin{beamercolorbox}[wd=\textwidth,left
+ ]{frametitle}
+             \usebeamerfont{frametitle}
+             \usebeamercolor[fg]{frametitle} {\bf \large \insertframetitle}
+           \end{beamercolorbox}}
+    \end{picture}
+  \end{minipage}
+  \vspace{-1cm}
+ 	}
+
+
+\setbeamertemplate{headline}
+{
+  \vspace{1mm}
+  \hfill%
+\begin{minipage}[b]{.98 \paperwidth}
+  \raggedleft \includegraphics[height=.8cm]{nectec.png}
+  % {\color{gray} \insertframenumber /\thainumber{\inserttotalframenumber}}
+\end{minipage}
+  \vspace{1mm}
+
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+    leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}
+    \leavevmode{\usebeamerfont{author in head/foot}%
+    \insertsection $\;\bullet \;$\insertsubsection}
+    \hfill%
+%    {\insertshortinstitute}%
+  \end{beamercolorbox}%
+}
+
+\setbeamertemplate{navigation symbols}{
+  \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+ \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+ \hspace{1em}  
+\usebeamerfont{footline} 
+   \insertframenumber/\thainumber{\inserttotalframenumber}
+}
+
+\setbeamertemplate{footline}
+{%
+\leavevmode%
+  \hbox{%
+   }%
+  \vskip0pt%
+ 
+}
+
+
+
+\mode
+<all>

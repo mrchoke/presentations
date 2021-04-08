@@ -1,0 +1,72 @@
+\documentclass[aspectratio=169,xetex,compress,xcolor={table}]{beamer}
+\usepackage{nectec}
+
+\title{\bfseries \LARGE Free \& Open Source Software}
+\subtitle{\normalfont \large \slshape เพื่อลดปัญหาการละเมิดลิขสิทธิ์}
+\author{\bfseries ศุภโชค ศันติวิชยะ}
+\institute{\slshape งานยกระดับความพร้อมทางเทคโนโลยี ฝ่ายสนับสนุนบริการทางวิศวกรรมและเทคโนโลยี \\
+ศูนย์อิเล็กทรอนิกส์และตอมพิวเตอร์แห่งชาติ\\
+สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ}
+\date{\printdate{2021}{4}{8}}
+% \logo{\includegraphics[height=0.5cm]{nectec.png}}
+\mode<presentation>
+
+\begin{document}
+
+% Title
+{
+\beamertemplatenavigationsymbolsempty %
+\setbeamertemplate{headline}{\vspace{13.2mm}}
+\coverbg
+\frame{\titlepage}
+}
+
+% Outline
+
+\setbeamertemplate{section in toc}[ball unnumbered]
+\section*{Outlines}
+\begin{frame}[t]
+  \frametitle{Outline}
+  \tableofcontents[hidesubsections]
+\end{frame}
+
+% Frams
+
+\section{Free \& Open Source Software}
+\subsection{FOSS}
+\include{slides/3}
+
+\subsection{The Free Software Foundation}
+\include{slides/4}
+\include{slides/5}
+
+\subsection{Open Source Software}
+\include{slides/6}
+\include{slides/7}
+
+\subsection{Definition}
+\include{slides/8}
+
+\section{ลิขสิทธิ์}
+\subsection{License classifications}
+\include{slides/9}
+
+\subsection{Proprietary vs. FOSS}
+\include{slides/10}
+
+\section{ตัวอย่างซอร์ฟแวร์ FOSS}
+\subsection{OS}
+\include{slides/11}
+
+\subsection{บริษัทที่มีบทบาทในโครงการ FOSS}
+\include{slides/12}
+\include{slides/13}
+
+\section{เนคเทค กับการใช้ FOSS }
+\subsection{ประวัติ}
+\include{slides/14}
+
+\subsection{ปัจจุบัน}
+\include{slides/15}
+
+\end{document}
